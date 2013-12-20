@@ -1,0 +1,45 @@
+.ui.field
+  if _is_owner()
+    .ui.fluid.icon.input
+      input.article-title(
+        type="text"
+        name="title"
+        value=title
+        placeholder="title...")
+      i.file.icon
+  else
+    h1.ui.header= title
+    .ui.divider
+
+.ui.field
+  if _is_owner()
+    .ui.segment.stacked.labeled.icon.input
+      .article-content
+      i.edit.icon
+  else
+    .article-content.ui
+
+.article-extra.field
+  if _is_owner()
+    .ui.fluid.icon.input
+      input.article-tag(
+        type="text"
+        name="tag"
+        value=tag.join(',')
+        placeholder="tag1, tag2...")
+      i.tags.icon
+  else
+    .ui.labeled.icon.teal.label
+      i.tags.icon
+      | tags
+    for t in tag
+      span.ui.label= t
+
+  .ui.list.left.floated
+    .ui.purple.horizontal.label
+      i.users.icon
+      | Contributor
+
+    //-each u in user
+    a.ui.circular.image.avatar(href="/?u=#{user}", data-content=user, data-position='top right')
+      img(src="/avatar/?mail=#{user}&s=27", title=user)

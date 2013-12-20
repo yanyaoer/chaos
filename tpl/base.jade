@@ -1,0 +1,47 @@
+!!! 5
+html
+  head
+    meta(chaset='utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700", rel="stylesheet", type="text/css")
+    link(rel="stylesheet", type="text/css", href=static_url('build/build.css'))
+    link(rel="stylesheet", type="text/css", href=static_url('feed.css'))
+    link(rel="stylesheet", type="text/css", href=static_url('custom.css'))
+    script(type="text/javascript", src=static_url("build/build.js"))
+    script(type="text/javascript", src=static_url("common.js"))
+    script(type="text/javascript", src=static_url("tpl.js"))
+  body#feed
+    .ui.red.label#loading
+      i.loading.icon
+      | Loading
+    .ui.celled.grid
+      .five.wide.middle.column#sidebar
+        a.ui.right.floated.small.basic.button(href="/#/compose/") compose
+
+        h2.ui.header
+          a(href="/")
+            i.icon.coffee
+            | Coffee or Tea?
+
+        .two.fluid.ui.buttons
+          each u in ['my', 'all']
+            kolor = 'black' if handler.get_argument('u', 'my') == u else ''
+            a.ui.mini.button(href="/?u=#{u}", data-tab=u, class=kolor)= u
+
+        .ui.divided.inbox.selection.list.tab.active#navigator
+
+        .ui.inverted.segment#upload
+          i.upload.icon
+          | drop file and upload
+
+      //
+        .ui.borderless.pagination.menu
+          a.icon.item
+            i.icon.left.arrow
+          each p in range(1, 5)
+            a.item= p
+          a.icon.item
+            i.icon.right.arrow
+
+      .eleven.wide.right.column
+        block content

@@ -1,0 +1,30 @@
+extends base
+
+block content
+  form#write.ui.form(action="/write/", method="post")
+    .field
+      input.form-control.input-lg(type="text", name="title", placeholder="title...")
+    .field
+      #content.ui.segment.stacked
+    .field
+      button.ui.green.sunbmit.button
+        i.icon.save
+        | submit
+
+  script
+    var Pen = require("pen");
+    var $ = require("jquery");
+
+    var editor = new Pen({
+      editor: document.querySelector('#content'),
+      stay: false
+    })
+    var form = $('#write')
+    form.on('submit', function(e){
+      var data = form.serialize()
+      data+= '&content='+form.find('#content').html()
+      $.post(form.attr('action'), data, function(e){
+        window.location.href= '/article/' + JSON.parse(e).uri
+      })
+      return false;
+    })

@@ -1,0 +1,5 @@
+.page{position:relative;-webkit-box-shadow:0 0 1px 1px rgba(0,0,0,0.15);padding:1em;background-color:#fff;}
+.page:after,.page:before{background-color:#fff;visibility:visible;content:"";display:block;height:100%;left:-1px;position:absolute;width:100%;-webkit-box-shadow:0 0 1px 1px rgba(0,0,0,0.1);-moz-box-shadow:0 0 1px 1px rgba(0,0,0,0.1);box-shadow:0 0 1px 1px rgba(0,0,0,0.1);top:0}
+.page:after{-webkit-transform:rotate(1.2deg);-moz-transform:rotate(1.2deg);-ms-transform:rotate(1.2deg);-o-transform:rotate(1.2deg);transform:rotate(1.2deg);z-index:-1}
+.page:before{-webkit-transform:rotate(-1.2deg);-moz-transform:rotate(-1.2deg);-ms-transform:rotate(-1.2deg);-o-transform:rotate(-1.2deg);transform:rotate(-1.2deg);z-index:-2}
+

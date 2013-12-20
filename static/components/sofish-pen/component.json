@@ -1,0 +1,21 @@
+{
+  "name": "pen",
+  "repo": "sofish/pen",
+  "description": "enjoy live editing (+markdown) http://sofish.github.io/pen",
+  "version": "0.0.1",
+  "keywords": [ "editor", "markdown", "medium" ],
+  "scripts": [
+    "src/pen.js"
+  ],
+  "main": "src/pen.js",
+  "files": [
+    "src/font/fontello.eot",
+    "src/font/fontello.svg",
+    "src/font/fontello.ttf",
+    "src/font/fontello.woff"
+  ],
+  "styles": [
+    "src/pen.css"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,7 @@
+- each x,i in nav
+  a.item(idx=i, _id=x._id, href="#/article/?id=#{x._id}")
+    - var ts = get_timestamp_by_object_id(x._id)
+    .left.floated.ui(href="#/?u=#{x.user}")
+      img.ui.circular.image.avatar(src="/avatar/?mail=#{x.user}", title=x.user, data-conten=x.user)
+    .description= x.title 
+    time.date(ts=ts)= ts 

@@ -1,0 +1,17 @@
+{
+  "name": "demo",
+  "dependencies": {
+    "component/jquery": "*",
+    "sofish/pen": "*",
+    "component/moment": "*",
+    "rich-harris/ractive": "*",
+    "component/reactive": "*",
+    "timoxley/react": "*",
+    "visionmedia/jade": "*",
+    "techjacker/q": "*",
+    "component/querystring": "*",
+    "lepture/semantic-ui": "*",
+    "enyo/dropzone": "*"
+  },
+  "remotes": []
+}
